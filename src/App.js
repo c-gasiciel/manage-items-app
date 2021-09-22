@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
+import List from './components/List';
 import './App.css';
 
 const App = (props) => {
@@ -9,13 +10,7 @@ const App = (props) => {
       <Header pageTitle="Manage My Items" />
       <main>
         <Form />
-        <section>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-        </section>
+        <List />
       </main>
     </div>
   );
