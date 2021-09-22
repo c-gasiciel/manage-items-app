@@ -1,13 +1,12 @@
 import React from 'react';
-import Form from './components/Form'
+import Form from './components/Form';
+import Header from './components/Header';
 import './App.css';
 
 const App = (props) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Manage My Items</h1>
-      </header>
+      <Header pageTitle="Manage My Items" />
       <main>
         <Form />
         <section>

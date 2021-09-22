@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = (appName, props) =>{
+const Header = ({pageTitle}, props) =>{
     return(
         <header className="App-header">
-            <h1>{ appName }</h1>
+            <h1>{ pageTitle }</h1>
         </header>  
     );
 }
