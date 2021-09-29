@@ -76,7 +76,7 @@ const Form = (props) =>{
                     id="item" 
                     name="item"
                     type="text" 
-                    value={ userInput.item }
+                    value={ userInput.item || "" }
                     onChange={ handleChange }
                  />
                 <SubmitButton>
