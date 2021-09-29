@@ -29,7 +29,7 @@ const CustomTextField = styled('input')({
 });
 
 const SubmitButton = styled('button')({
-    padding: '.2em',
+    padding: '.2em 2em',
 });
 
 
