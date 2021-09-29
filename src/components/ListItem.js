@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ListItem = ({ itemText }) =>{
+    
     return(
         <ListItemCard>
             { itemText }
-            <RemoveButton>+</RemoveButton>
+            <RemoveButton
+                type="button"
+                onClick={() => alert("Remove me!")}
+            >+</RemoveButton>
         </ListItemCard>
     );
 }
