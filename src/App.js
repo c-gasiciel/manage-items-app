@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import List from './components/List';
@@ -11,6 +11,8 @@ const App = (props) => {
     "Read", 
     "Finish this project"
   ]);
+
+  const ListContext = createContext();
 
   return (
     <div className="App">
