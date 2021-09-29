@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from '@material-ui/styles';
-//import styled from 'styled-components';
+
 
 const FormCard = styled('section')({
     background: '#D7D2CB',
@@ -35,14 +35,25 @@ const SubmitButton = styled('button')({
 
 
 const Form = (props) =>{
+    const [userInput, setUserInput] = useState({});
+
+    const handleChange = event =>{
+        setUserInput({
+            ...userInput,
+            [event.target.name]: event.target.value
+        });
+    }
+
     return(
         <FormCard>
             <StyledForm>
                 <CustomTextField 
-                    id="itemInput" 
-                    label="" 
-                    value=""
-                    variant="outlined" />
+                    id="item" 
+                    name="item"
+                    type="text" 
+                    value={ userInput.item }
+                    onChange={ handleChange }
+                 />
                 <SubmitButton>
                     Add item
                 </SubmitButton>
