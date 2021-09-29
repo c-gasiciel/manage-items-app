@@ -36,7 +36,7 @@ const UnorderedList = styled.ul`
 const ListItemCard = styled.li`
     background: #C28EA0;
     box-sizing: border-box;
-    margin: 1em 0em;
+    margin: .3em 0em;
     padding: .5em 1em;
     width: 60%;
 `;
