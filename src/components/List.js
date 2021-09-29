@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import ListItem from './ListItem';
 
 const List = (props) =>{
+    const myList = ["Draw", "Clean", "Finish this project", "Read"];
+
+
     return(
         <ListContainer>
             <UnorderedList>
-                <ListItem itemText="Item 1" />
-                <ListItem itemText="Item 2"/>
-                <ListItem itemText="Item 3" />
+                { myList.map(item => <ListItem itemText={ item }/>)}
             </UnorderedList>
         </ListContainer>
     );
