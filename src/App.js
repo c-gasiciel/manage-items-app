@@ -16,7 +16,7 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <Header pageTitle="Manage My Items" />
+      <Header pageTitle="Manage my Items" />
       <main>
         <Form />
         <List display={ myList } />
