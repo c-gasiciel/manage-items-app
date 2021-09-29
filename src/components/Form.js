@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import uniqid from 'uniqid';
 import { styled } from '@material-ui/styles';
+import { ListContext } from '../App';
 
 
 const FormCard = styled('section')({
@@ -35,7 +37,18 @@ const SubmitButton = styled('button')({
 
 
 const Form = (props) =>{
-    const [userInput, setUserInput] = useState({});
+    /*  Grab context from App */ 
+    const { dispatch } = useContext(ListContext);
+
+    /* Set up initial state of the form */
+    const initialState = {
+        itemId: "",
+        item: "",
+        isSubmitting: false,
+        errorMsg: null
+    };
+
+    const [userInput, setUserInput] = useState({initialState});
 
     const handleChange = event =>{
         setUserInput({
@@ -44,9 +57,21 @@ const Form = (props) =>{
         });
     }
 
+    const handleSubmit = event => {
+        event.preventDefault();
+        setUserInput({
+            ...userInput,
+            itemId: uniqid(),
+            isSubmitting: true,
+            errorMsg: null
+        });
+        console.log(userInput.itemId);
+        console.log(userInput.item);
+    }
+
     return(
         <FormCard>
-            <StyledForm>
+            <StyledForm onSubmit={ handleSubmit }>
                 <CustomTextField 
                     id="item" 
                     name="item"
