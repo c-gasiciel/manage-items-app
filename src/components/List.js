@@ -8,7 +8,9 @@ const List = (props) =>{
 
     return(
         <ListContainer>
-            <h2>My Items ({ myList.length })</h2>
+            <ItemCount>
+                <h2>My Items ({ myList.length })</h2>
+            </ItemCount>
             <UnorderedList>
                 { myList.map(item => <ListItem itemText={ item }/>)}
             </UnorderedList>
@@ -25,6 +27,12 @@ const ListContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+`;
+
+const ItemCount = styled.div` 
+    display: flex;
+    align-items: flex-start;
+    width: 65%;
 `;
 
 const UnorderedList = styled.ul` 
