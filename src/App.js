@@ -1,27 +1,55 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useReducer } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import List from './components/List';
 import './App.css';
 
+
+export const ListContext = createContext();
+/* Set initial state of myList */
+const initialState = [];
+
+/* Reducer to manage additions and removals to items list */
+const reducer  = (state, action) => {
+  switch(action.type){
+    case 'addItem':
+      return[
+        ...state, 
+          action.newItem
+      ];
+      case 'removeItem':
+        return[
+
+        ];
+      default:
+        return state;
+  }
+};
+
+
 const App = (props) => {
-  /* Set up array for list inputs */
+  /* Set up array for list inputs 
   const [ myList, setMyList ] = useState([
     "Clean", 
     "Read", 
     "Finish this project"
-  ]);
+  ]); */
 
-  const ListContext = createContext();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
 
   return (
-    <div className="App">
+    <ListContext.Provider value={{
+      state,
+      dispatch
+    }}>
       <Header pageTitle="Manage my Items" />
       <main>
         <Form />
-        <List display={ myList } />
+        <List />
       </main>
-    </div>
+    </ListContext.Provider>
   );
 }
 
