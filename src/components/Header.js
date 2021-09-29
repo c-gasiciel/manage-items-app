@@ -1,6 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@material-ui/styles';
 
+const StyledHeader = styled('header')({
+    textAlign: 'center',
+});
 
 const Header = ({pageTitle}) =>
         <StyledHeader>
@@ -9,6 +12,3 @@ const Header = ({pageTitle}) =>
 
 export default Header;
 
-const StyledHeader = styled.header` 
-    text-align: center;
-`;

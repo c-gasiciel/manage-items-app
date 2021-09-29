@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@material-ui/styles';
 
 const ListItem = ({ itemText }) =>{
     
@@ -16,23 +16,22 @@ const ListItem = ({ itemText }) =>{
 
 export default ListItem;
 
-const ListItemCard = styled.li`
-    background: #C28EA0;
-    box-sizing: border-box;
-    color: white;
-    margin: .3em 0em;
-    padding: .5em 1em;
-    width: 60%;
+const ListItemCard = styled('li')({    
+    background: '#C28EA0',
+    boxSizing: 'border-box',
+    color: 'white',
+    margin: '.3em 0em',
+    padding: '.5em 1em',
+    width: '60%',
+    display: 'flex',
+    justifyContent: 'space-between',
+});
 
-    display: flex;
-    justify-content: space-between;
-`;
 
-
-const RemoveButton = styled.button` 
-    background: transparent;
-    border: none;
-    font-weight: bold;
-    font-size: 1.3em;
-    transform: rotate(45deg);
-`;
+const RemoveButton = styled('button')({    
+    background: 'transparent',
+    border: 'none',
+    fontWeight: 'bold',
+    fontSize: '1.3em',
+    transform: 'rotate(45deg)'
+});

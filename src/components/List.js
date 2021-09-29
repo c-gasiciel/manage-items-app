@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { styled } from '@material-ui/styles';
 import ListItem from './ListItem';
 
 const List = (props) =>{
@@ -21,25 +21,25 @@ const List = (props) =>{
 export default List;
 
 
-const ListContainer = styled.section` 
-    background: #DDC9A2;
-    margin: .5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
+const ListContainer = styled('section')({    
+    background: '#DDC9A2',
+    margin: '.5em',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+});
 
-const ItemCount = styled.div` 
-    display: flex;
-    align-items: flex-start;
-    width: 65%;
-`;
+const ItemCount = styled('div')({    
+    display: 'flex',
+    alignItems: 'flex-start',
+    width: '65%',
+}) ;
 
-const UnorderedList = styled.ul` 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    list-style: none;
-    width: 60%;
-`;
+const UnorderedList = styled('ul')({    
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    listStyle: 'none',
+    width: '60%'
+});
 
