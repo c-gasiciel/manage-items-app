@@ -8,6 +8,7 @@ const List = (props) =>{
 
     return(
         <ListContainer>
+            <h2>My Items ({ myList.length })</h2>
             <UnorderedList>
                 { myList.map(item => <ListItem itemText={ item }/>)}
             </UnorderedList>
