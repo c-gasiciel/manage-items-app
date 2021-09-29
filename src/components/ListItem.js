@@ -1,14 +1,14 @@
 import React from 'react';
 import { styled } from '@material-ui/styles';
 
-const ListItem = ({ itemText }) =>{
+const ListItem = ({ itemText, itemIdx }) =>{
     
     return(
         <ListItemCard>
             { itemText }
             <RemoveButton
                 type="button"
-                onClick={() => alert("Remove me!")}
+                onClick={() => alert("Remove item " + itemIdx)}
             >+</RemoveButton>
         </ListItemCard>
     );
