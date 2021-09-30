@@ -31,12 +31,6 @@ const reducer  = (state, action) => {
 
 
 const App = (props) => {
-  /* Set up array for list inputs 
-  const [ myList, setMyList ] = useState([
-    "Clean", 
-    "Read", 
-    "Finish this project"
-  ]); */
 
   const [state, dispatch] = useReducer(reducer, initialState);
 

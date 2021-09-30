@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { styled } from '@material-ui/styles';
 
-const ListItem = ({ itemId, itemText, itemIdx }) =>{
+const ListItem = ({ itemId, itemText }) =>{
     
     return(
         <StyledListItem key={ itemId }>
             { itemText }
             <RemoveButton
                 type="button"
-                onClick={() => alert("Remove item " + itemIdx)}
+                onClick={() => alert("Remove item " + itemId)}
             >+</RemoveButton>
         </StyledListItem>
     );

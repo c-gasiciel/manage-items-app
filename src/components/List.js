@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { styled } from '@material-ui/styles';
 import ListItem from './ListItem';
+import { ListContext } from '../App';
 
 const List = (props) =>{
     const myList = [
@@ -10,17 +11,19 @@ const List = (props) =>{
         { itemId: "3", itemText: "Read"}
     ];
 
+    const { state } = useContext(ListContext);
+
+
 
     return(
         <ListContainer>
             <ItemCount>
-                <h2>My Items ({ myList.length })</h2>
+                <h2>My Items ({ state.length })</h2>
             </ItemCount>
             <UnorderedList>
-                { myList.map((item, index)=><ListItem 
+                { state.map((item)=><ListItem 
                     itemId={ item.itemId } 
-                    itemText={ item.itemText } 
-                    itemIdx={ index }/>
+                    itemText={ item.itemText } />
                 )}
             </UnorderedList>
         </ListContainer>
