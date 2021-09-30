@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { styled } from '@material-ui/styles';
+import { ListContext } from '../App';
+
 
 const ListItem = ({ itemId, itemText }) =>{
+    /* Get dispatch function from Context */
+    const { dispatch } = useContext(ListContext);
     
     return(
         <StyledListItem key={ itemId }>
             { itemText }
             <RemoveButton
                 type="button"
-                onClick={() => alert("Remove item " + itemId)}
+                onClick={() => dispatch({
+                    type: 'removeItem', 
+                    payload: itemId}
+                )}
             >+</RemoveButton>
         </StyledListItem>
     );

@@ -21,9 +21,7 @@ const reducer  = (state, action) => {
         }
       ];
       case 'removeItem':
-        return[
-
-        ];
+        return state.filter((item) => item.itemId !== action.payload);
       default:
         return state;
   }
