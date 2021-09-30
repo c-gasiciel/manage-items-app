@@ -18,16 +18,13 @@ const initialState = [
 const reducer  = (state, action) => {
   switch(action.type){
     case 'addItem':
-      return{
+      return[
         ...state,
-        items: [
-          state.items,
-          {
-            itemId:  uniqid(),
-            itemText: action.payload
-          }
-        ] 
-      };
+        { 
+          itemId: action.payload.itemId,
+          itemText: action.payload.itemText
+        }
+      ];
       case 'removeItem':
         return[
 
