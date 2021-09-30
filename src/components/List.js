@@ -3,7 +3,12 @@ import { styled } from '@material-ui/styles';
 import ListItem from './ListItem';
 
 const List = (props) =>{
-    const myList = ["Draw", "Clean", "Finish this project", "Read"];
+    const myList = [
+        { itemId: "0", itemText: "Draw" }, 
+        { itemId: "1", itemText: "Clean"}, 
+        { itemId: "2", itemText:"Finish this project"}, 
+        { itemId: "3", itemText: "Read"}
+    ];
 
 
     return(
@@ -12,7 +17,10 @@ const List = (props) =>{
                 <h2>My Items ({ myList.length })</h2>
             </ItemCount>
             <UnorderedList>
-                { myList.map((item, index)=><ListItem itemText={ item } itemIdx={ index }/>
+                { myList.map((item, index)=><ListItem 
+                    itemId={ item.itemId } 
+                    itemText={ item.itemText } 
+                    itemIdx={ index }/>
                 )}
             </UnorderedList>
         </ListContainer>

@@ -1,4 +1,5 @@
 import React, { useState, createContext, useReducer } from 'react';
+import uniqid from 'uniqid';
 import Form from './components/Form';
 import Header from './components/Header';
 import List from './components/List';
@@ -7,16 +8,26 @@ import './App.css';
 
 export const ListContext = createContext();
 /* Set initial state of myList */
-const initialState = [];
+const initialState = [
+  { itemId: 0, itemText: 'Ride your bike'},
+  { itemId: 1, itemText: 'Read'},
+  { itemId: 2, itemText: 'Finish this project'}
+];
 
 /* Reducer to manage additions and removals to items list */
 const reducer  = (state, action) => {
   switch(action.type){
     case 'addItem':
-      return[
-        ...state, 
-          action.newItem
-      ];
+      return{
+        ...state,
+        items: [
+          state.items,
+          {
+            itemId:  uniqid(),
+            itemText: action.payload
+          }
+        ] 
+      };
       case 'removeItem':
         return[
 

@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import { styled } from '@material-ui/styles';
 
-const ListItem = ({ itemText, itemIdx }) =>{
+const ListItem = ({ itemId, itemText, itemIdx }) =>{
     
     return(
-        <ListItemCard>
+        <StyledListItem key={ itemId }>
             { itemText }
             <RemoveButton
                 type="button"
                 onClick={() => alert("Remove item " + itemIdx)}
             >+</RemoveButton>
-        </ListItemCard>
+        </StyledListItem>
     );
 }
 
 export default ListItem;
 
-const ListItemCard = styled('li')({    
+
+const StyledListItem = styled('li')({    
     background: '#C28EA0',
     boxSizing: 'border-box',
     color: 'white',
-    margin: '.3em 0em',
+    margin: '.3em 0em', 
     padding: '.5em 1em',
     width: '60%',
     display: 'flex',

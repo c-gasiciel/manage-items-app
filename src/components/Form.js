@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import uniqid from 'uniqid';
 import { styled } from '@material-ui/styles';
 import { ListContext } from '../App';
 
@@ -42,10 +41,7 @@ const Form = (props) =>{
 
     /* Set up initial state of the form */
     const initialState = {
-        itemId: "",
-        item: "",
-        isSubmitting: false,
-        errorMsg: null
+        item: '',
     };
 
     const [userInput, setUserInput] = useState({initialState});
@@ -59,14 +55,13 @@ const Form = (props) =>{
 
     const handleSubmit = event => {
         event.preventDefault();
-        setUserInput({
-            ...userInput,
-            itemId: uniqid(),
-            isSubmitting: true,
-            errorMsg: null
-        });
-        console.log(userInput.itemId);
-        console.log(userInput.item);
+        /* Only process item if user typed something */
+        if(userInput.item !== ''){
+            console.log(userInput.item);
+        
+            dispatch({ type: 'addItem', payload:userInput.item })
+            setUserInput({ item: '' });
+        }
     }
 
     return(
