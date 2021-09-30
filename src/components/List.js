@@ -3,17 +3,11 @@ import { styled } from '@material-ui/styles';
 import ListItem from './ListItem';
 import { ListContext } from '../App';
 
+
+
 const List = (props) =>{
-    const myList = [
-        { itemId: "0", itemText: "Draw" }, 
-        { itemId: "1", itemText: "Clean"}, 
-        { itemId: "2", itemText:"Finish this project"}, 
-        { itemId: "3", itemText: "Read"}
-    ];
-
+    /* Get current state from Context */
     const { state } = useContext(ListContext);
-
-
 
     return(
         <ListContainer>
@@ -33,6 +27,7 @@ const List = (props) =>{
 export default List;
 
 
+/* Styling */
 const ListContainer = styled('section')({    
     background: '#DDC9A2',
     margin: '.5em',

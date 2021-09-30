@@ -1,4 +1,4 @@
-import React, { useState, createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 import Form from './components/Form';
 import Header from './components/Header';
 import List from './components/List';
@@ -6,10 +6,10 @@ import './App.css';
 
 
 export const ListContext = createContext();
-/* Set initial state of myList */
+/* Set initial state of items list */
 const initialState = [];
 
-/* Reducer to manage additions and removals to items list */
+/* Manage additions to and removals from items list with reducer */
 const reducer  = (state, action) => {
   switch(action.type){
     case 'addItem':
@@ -31,7 +31,6 @@ const reducer  = (state, action) => {
 const App = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
 
 
   return (

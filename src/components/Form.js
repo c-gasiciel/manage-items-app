@@ -4,6 +4,7 @@ import { styled } from '@material-ui/styles';
 import { ListContext } from '../App';
 
 
+/* Styling */
 const FormCard = styled('section')({
     background: '#D7D2CB',
     margin: '0.5em',
@@ -33,6 +34,7 @@ const CustomTextField = styled('input')({
 const SubmitButton = styled('button')({
     padding: '.2em 2em',
 });
+/* End styling */
 
 
 
@@ -47,6 +49,7 @@ const Form = (props) =>{
 
     const [userInput, setUserInput] = useState({initialState});
 
+    /* Capture user input */
     const handleChange = event =>{
         setUserInput({
             ...userInput,
@@ -58,13 +61,12 @@ const Form = (props) =>{
         event.preventDefault();
         /* Only process item if user typed something */
         if(userInput.item !== ''){
-            console.log(userInput.item);
-        
             dispatch({ 
                 type: 'addItem', 
                 payload:{ itemId: uniqid(), itemText: userInput.item }
             });
 
+            /* Clear input for next entry */
             setUserInput({ item: '' });
         }
     }
