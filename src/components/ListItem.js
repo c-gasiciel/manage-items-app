@@ -8,7 +8,7 @@ const ListItem = ({ itemId, itemText }) =>{
     const { dispatch } = useContext(ListContext);
     
     return(
-        <StyledListItem key={ itemId }>
+        <StyledListItem>
             { itemText }
             <RemoveButton
                 type="button"

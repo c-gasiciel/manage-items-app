@@ -15,7 +15,8 @@ const List = (props) =>{
                 <h2>My Items ({ state.length })</h2>
             </ItemCount>
             <UnorderedList>
-                { state.map((item)=><ListItem 
+                { state.map((item)=><ListItem
+                    key={ item.itemId } 
                     itemId={ item.itemId } 
                     itemText={ item.itemText } />
                 )}
