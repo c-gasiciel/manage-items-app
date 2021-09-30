@@ -5,7 +5,7 @@ const StyledHeader = styled('header')({
     textAlign: 'center',
 });
 
-const Header = ({pageTitle}) =>
+const Header = ({ pageTitle }) =>
         <StyledHeader>
             <h1>{ pageTitle }</h1>
         </StyledHeader>  
