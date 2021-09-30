@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import uniqid from 'uniqid';
 import { styled } from '@material-ui/styles';
 import { ListContext } from '../App';
 
@@ -59,7 +60,11 @@ const Form = (props) =>{
         if(userInput.item !== ''){
             console.log(userInput.item);
         
-            dispatch({ type: 'addItem', payload:userInput.item })
+            dispatch({ 
+                type: 'addItem', 
+                payload:{ itemId: uniqid(), itemText: userInput.item }
+            });
+
             setUserInput({ item: '' });
         }
     }
